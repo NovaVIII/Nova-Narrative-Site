@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join Us – Nova Narrative Studios</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Join Nova Narrative Studios</h1>
+    <nav>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="games.html" class="nav-link">Games</a>
+      <a href="join.html" class="nav-link">Join Us</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Become Part of Our Storytelling Team</h2>
+      <p>Fill out the form below to apply as a team member or volunteer.</p>
+
+      <form action="#" method="post">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="role">Role you're interested in:</label>
+        <select id="role" name="role" required>
+          <option value="">-- Select a Role --</option>
+          <option value="writer">Writer</option>
+          <option value="designer">Game Designer</option>
+          <option value="tester">Tester</option>
+          <option value="artist">Artist</option>
+          <option value="developer">Developer</option>
+        </select>
+
+        <label for="message">Tell us why you want to join:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Nova Narrative Studios</p>
+  </footer>
+
+  <script>
+    // Set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Apply fade out on navigation links
+    const links = document.querySelectorAll("a.nav-link");
+
+    links.forEach(link => {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        const href = this.getAttribute("href");
+
+        document.body.classList.add("fade-out");
+
+        setTimeout(() => {
+          window.location.href = href;
+        }, 500); 
+      });
+    });
+  </script>
+
+</body>
+</html>
