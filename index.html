@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home – Nova Narrative Studios</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+     <img src="assets/images/logo.png" alt="Nova Narrative Studios Logo" class="logo">
+    <h1>Nova Narrative Studios</h1>
+    <nav>
+  <a href="index.html" class="nav-link">Home</a>
+  <a href="about.html" class="nav-link">About</a>
+  <a href="games.html" class="nav-link">Games</a>
+  <a href="join.html" class="nav-link">Join Us</a>
+</nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Welcome to Nova Narrative Studios!</h2>
+      
+      <p>Nova Narrative Studios - a creative space where stories come to life through games. We believe in the power of storytelling to foster empathy, spark dialogue, and inspire change. Our mission is to develop immersive, emotionally-driven games that reflect real-world issues while still delivering compelling gameplay experiences. Whether your'e passionate about mental health awareness, environmental sustainability, or social justice, we aim to craft interactive narratives that leave a lasting impact.</p>
+
+<p>Explore our current projects or become part of our growing team. Nova Narrative Studios isn't just a game company, it's a storytelling movement made to build a better world one story at a time.</p>
+
+      <!-- Logo created using Canva (https://www.canva.com) -->
+<img src="assets/images/logo.png" alt="Nova Narrative Studios Logo" class="logo">
+
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Nova Narrative Studios</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Apply fade out on navigation
+  const links = document.querySelectorAll("a.nav-link");
+
+  links.forEach(link => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      const href = this.getAttribute("href");
+
+      document.body.classList.add("fade-out");
+
+      setTimeout(() => {
+        window.location.href = href;
+      }, 500); // Match this to the CSS animation duration
+    });
+  });
+
+  // Set current year in footer
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

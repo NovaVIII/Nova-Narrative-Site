@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Games – Nova Narrative Studios</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Our Games</h1>
+    <nav>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="games.html" class="nav-link">Games</a>
+      <a href="join.html" class="nav-link">Join Us</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Games That Tell Stories</h2>
+      <p>We create immersive story-driven games that explore real-world issues.</p>
+    </section>
+
+    <section>
+      <h3>Game Lineup</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Genre</th>
+            <th>Theme</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Lost Signal</td>
+            <td>Narrative Horror</td>
+            <td>Mental Health</td>
+            <td>In Development</td>
+          </tr>
+          <tr>
+            <td>Earthbound Echo</td>
+            <td>Adventure</td>
+            <td>Climate Change</td>
+            <td>Concept</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Nova Narrative Studios</p>
+  </footer>
+
+  <script>
+    // Set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Apply fade out on navigation
+    const links = document.querySelectorAll("a.nav-link");
+
+    links.forEach(link => {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        const href = this.getAttribute("href");
+
+        document.body.classList.add("fade-out");
+
+        setTimeout(() => {
+          window.location.href = href;
+        }, 500);
+      });
+    });
+  </script>
+
+</body>
+</html>
